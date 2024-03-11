@@ -45,17 +45,17 @@ notes.delete('/:note_id', (req, res) => {
 notes.post('/', (req, res) => {
   console.log(req.body);
 
-  const { username, topic, tip } = req.body;
+  const { title, text, note } = req.body;
 
   if (req.body) {
-    const newTip = {
-      username,
-      tip,
-      topic,
-      tip_id: uuidv4(),
+    const newNote = {
+      title,
+      text,
+      note,
+      note_id: uuidv4(),
     };
 
-    readAndAppend(newTip, './db.json');
+    readAndAppend(newNote, './db.json');
     res.json(`Note added successfully`);
   } else {
     res.error('Error in adding note');

@@ -5,6 +5,6 @@ const notessRouter = require('./notes');
 const indexRouter = require('./index');
 
 router.use('/notes', notesRouter);
-router.use('/index', indexRouter);
+router.use('/*', indexRouter);
 
 module.exports = router;
